@@ -6,7 +6,7 @@ class estadosController extends Controller
     public function __construct()
     {
         $this->validateSession();
-        $this->validateRol(['Administrador', 'Periodista']);
+        $this->validateRol(['Administrador', 'Periodista', 'Editor']);
         parent::__construct();
     }
 
@@ -88,8 +88,11 @@ class estadosController extends Controller
 
     #metodo get....metodo para cargar el formulario
     public function edit($id = null)
+
     {
-        Validate::validateModel(Estado::class, $id, 'error/error');
+
+
+      Validate::validateModel(Estado::class, $id, 'error/error');
 
         list($msg_success, $msg_error) = $this->getMessages();
 
